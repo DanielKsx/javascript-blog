@@ -31,7 +31,7 @@ const titleClickHandler = function(event){
 
 /* [DONE]add class 'active' to the correct article */
   targetArticle.classList.add('active');
-}
+};
   const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles';
