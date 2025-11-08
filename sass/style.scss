@@ -171,25 +171,8 @@ a:hover { text-decoration: underline; }
   }
 }
 
-/* Tags */
-.post-tags .list-horizontal li a {
-  display: inline-block;
-  padding: 6px 10px;
-  border: 1px solid #ccc;
-  border-radius: 999px;
-  text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-
-  &:hover {
-    background-color: $color-accent;
-    color: #fff;
-    transform: translateY(-2px);
-  }
-}
-
 /* Links in sidebar */
 .sidebar .list a {
-  color: #333;
   text-decoration: none;
   display: inline-block;
   padding: 6px 0;
@@ -203,8 +186,73 @@ a:hover { text-decoration: underline; }
 
 
 .sidebar .tags span {
-  color: #777;
-  font-size: 14px;
+  color: inherit;
+  font-size: inherit;
+}
+
+
+/* Tags */
+.post-tags .list-horizontal li a {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.post-tags .list-horizontal li a:hover {
+  background-color: #0d6efd;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.list.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem .75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.list.tags li {
+  display: inline-block;
+}
+.list.tags a {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  text-decoration: none;
+  line-height: 1;
+  font-weight: 600;
+  transition: background-color .2s ease, transform .2s ease;
+}
+.list.tags a.tag-size-1 {
+  font-size: .85rem;
+  color: #667;
+}
+.list.tags a.tag-size-2 {
+  font-size: 1rem;
+  color: #556; }
+.list.tags a.tag-size-3 {
+  font-size: 1.2rem;
+  color: #445;
+}
+.list.tags a.tag-size-4 {
+  font-size: 1.45rem;
+  color: #334;
+}
+.list.tags a.tag-size-5 {
+  font-size: 1.75rem;
+  color: #223;
+}
+.list.tags a:hover,
+.list.tags a:focus-visible {
+  background: $color-accent;
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+  transition: background-color .2s ease, transform .2s ease;
 }
 
 
@@ -231,11 +279,13 @@ a:hover { text-decoration: underline; }
   }
 
   .post {
+    display: none;
     position: static;
     grid-area: 1 / 1;
   }
 
   .post.active {
+    display: block;
     z-index: 1;
   }
 }
